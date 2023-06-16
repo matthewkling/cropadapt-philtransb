@@ -1,0 +1,172 @@
+
+ STANDARD OLS MODELS, regression summaries: 
+
+$aet
+
+Call:
+lm(formula = crop_trend ~ clim_delta, data = x, weights = acres)
+
+Weighted Residuals:
+    Min      1Q  Median      3Q     Max 
+-76.825  -3.128  -0.286   2.311 102.885 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 3.643e-03  5.255e-04   6.932 5.06e-12 ***
+clim_delta  9.074e-05  2.088e-05   4.346 1.43e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 9.05 on 3033 degrees of freedom
+Multiple R-squared:  0.006189,	Adjusted R-squared:  0.005861 
+F-statistic: 18.89 on 1 and 3033 DF,  p-value: 1.432e-05
+
+
+$cwd
+
+Call:
+lm(formula = crop_trend ~ clim_delta, data = x, weights = acres)
+
+Weighted Residuals:
+    Min      1Q  Median      3Q     Max 
+-98.412  -1.962   0.307   2.875 101.068 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -3.638e-03  5.505e-04  -6.608  4.6e-11 ***
+clim_delta   2.777e-05  1.556e-05   1.785   0.0743 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 9.595 on 3033 degrees of freedom
+Multiple R-squared:  0.00105,	Adjusted R-squared:  0.0007202 
+F-statistic: 3.187 on 1 and 3033 DF,  p-value: 0.07435
+
+
+
+ STANDARD OLS MODELS, residual autocorrelation tests: 
+
+$aet
+
+	Moran I test under randomisation
+
+data:  .  
+weights: nbl  n reduced by no-neighbour observations
+  
+
+Moran I statistic standard deviate = 45.71, p-value < 2.2e-16
+alternative hypothesis: greater
+sample estimates:
+Moran I statistic       Expectation          Variance 
+     0.4967271145     -0.0003299241      0.0001182493 
+
+
+$cwd
+
+	Moran I test under randomisation
+
+data:  .  
+weights: nbl  n reduced by no-neighbour observations
+  
+
+Moran I statistic standard deviate = 38.913, p-value < 2.2e-16
+alternative hypothesis: greater
+sample estimates:
+Moran I statistic       Expectation          Variance 
+     0.4229631291     -0.0003299241      0.0001183286 
+
+
+
+ SPATIAL ERROR MODELS, regression summaries: 
+
+$aet
+
+Call:errorsarlm(formula = crop_trend ~ clim_delta, data = x, listw = nb, 
+    na.action = na.omit, weights = acres, zero.policy = TRUE)
+
+Residuals:
+        Min          1Q      Median          3Q         Max 
+-0.34470850 -0.00646179 -0.00059888  0.00621246  0.19651375 
+
+Type: error 
+Regions with no neighbours included:
+ 1161 1801 2875 
+Coefficients: (asymptotic standard errors) 
+              Estimate Std. Error z value Pr(>|z|)
+(Intercept) 4.1065e-03 1.6368e-03  2.5089  0.01211
+clim_delta  2.1836e-05 2.9636e-05  0.7368  0.46123
+
+Lambda: 0.82665, LR test value: 2839.7, p-value: < 2.22e-16
+Asymptotic standard error: 0.011868
+    z-value: 69.653, p-value: < 2.22e-16
+Wald statistic: 4851.5, p-value: < 2.22e-16
+
+Log likelihood: 6578.095 for error model
+ML residual variance (sigma squared): 26.862, (sigma: 5.1828)
+Number of observations: 3035 
+Number of parameters estimated: 4 
+AIC: NA (not available for weighted model), (AIC for lm: -10311)
+
+
+$cwd
+
+Call:errorsarlm(formula = crop_trend ~ clim_delta, data = x, listw = nb, 
+    na.action = na.omit, weights = acres, zero.policy = TRUE)
+
+Residuals:
+        Min          1Q      Median          3Q         Max 
+-0.32073581 -0.00663497  0.00042601  0.00664140  0.28929267 
+
+Type: error 
+Regions with no neighbours included:
+ 1161 1801 2875 
+Coefficients: (asymptotic standard errors) 
+               Estimate  Std. Error z value Pr(>|z|)
+(Intercept) -3.1573e-03  2.0853e-03 -1.5141  0.13001
+clim_delta   6.5753e-05  2.5676e-05  2.5609  0.01044
+
+Lambda: 0.85684, LR test value: 2821.5, p-value: < 2.22e-16
+Asymptotic standard error: 0.010562
+    z-value: 81.123, p-value: < 2.22e-16
+Wald statistic: 6580.9, p-value: < 2.22e-16
+
+Log likelihood: 6391.347 for error model
+ML residual variance (sigma squared): 29.769, (sigma: 5.4561)
+Number of observations: 3035 
+Number of parameters estimated: 4 
+AIC: NA (not available for weighted model), (AIC for lm: -9955.2)
+
+
+
+ SPATIAL ERROR MODELS, residual autocorrelation tests: 
+
+$aet
+
+	Moran I test under randomisation
+
+data:  .  
+weights: nbl  n reduced by no-neighbour observations
+  
+
+Moran I statistic standard deviate = -12.218, p-value = 1
+alternative hypothesis: greater
+sample estimates:
+Moran I statistic       Expectation          Variance 
+    -0.1327361534     -0.0003299241      0.0001174371 
+
+
+$cwd
+
+	Moran I test under randomisation
+
+data:  .  
+weights: nbl  n reduced by no-neighbour observations
+  
+
+Moran I statistic standard deviate = -10.951, p-value = 1
+alternative hypothesis: greater
+sample estimates:
+Moran I statistic       Expectation          Variance 
+    -0.1191739868     -0.0003299241      0.0001177743 
+
+
